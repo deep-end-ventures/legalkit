@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     description: "Generate professional legal documents for your business in minutes.",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "LegalKit — Legal Document Generator",
+    description: "Generate professional legal documents for your business in minutes.",
+  },
 };
 
 export default function RootLayout({
