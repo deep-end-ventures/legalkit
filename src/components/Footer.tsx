@@ -42,7 +42,16 @@ export function Footer() {
           </div>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-xs text-gray-500">
-              © {new Date().getFullYear()} LegalKit by Deep End Ventures. All rights reserved.
+              © {new Date().getFullYear()} LegalKit. A{' '}
+              <a
+                href="https://deep-end-ventures.vercel.app"
+                className="text-gray-400 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Deep End Ventures
+              </a>{' '}
+              company. All rights reserved.
             </p>
             <p className="text-xs text-gray-500">
               Template generator — not a law firm.
