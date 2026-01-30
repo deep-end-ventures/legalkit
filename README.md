@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚖️ LegalKit
+
+**Generate professional legal documents for your business in minutes.**
+
+Privacy policies, terms of service, cookie policies — customized for your business through a guided questionnaire. Download as HTML, Markdown, or PDF.
+
+> ⚠️ **Disclaimer:** LegalKit is a template generator, not a law firm. Generated documents are templates and do not constitute legal advice. Consult a qualified attorney before using in production.
+
+## 🚀 Live
+
+**https://legalkit.vercel.app**
+
+## Features
+
+- **📝 Privacy Policy Generator** — Comprehensive policies covering data collection, usage, sharing, and user rights
+- **📋 Terms of Service Generator** — Detailed terms covering liability, IP, accounts, payments, and dispute resolution
+- **🍪 Cookie Policy Generator** — Policies with detailed cookie type breakdowns and management options
+- **🌍 Multi-Jurisdiction** — Support for GDPR, CCPA/CPRA, PIPEDA, LGPD, and more
+- **📥 Multiple Formats** — Download as HTML or Markdown
+- **📊 Dashboard** — Manage and re-download your generated documents
+- **⚡ Instant Generation** — Documents generated in seconds, no waiting
+- **🛡️ Bulletproof Disclaimers** — Every generated document includes clear disclaimers
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+- **Storage:** Browser localStorage (documents stay on your device)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── page.tsx          # Landing page
+│   ├── generate/         # Questionnaire & generation flow
+│   ├── dashboard/        # Document management
+│   ├── terms/            # LegalKit's own ToS
+│   ├── privacy/          # LegalKit's own privacy policy
+│   └── api/generate/     # Server-side generation API
+├── components/           # Shared UI components
+├── lib/                  # Types, disclaimers, utilities
+└── templates/            # Document generation templates
+    ├── privacy-policy.ts
+    ├── terms-of-service.ts
+    └── cookie-policy.ts
+```
 
-## Learn More
+## Pricing
 
-To learn more about Next.js, take a look at the following resources:
+- **Free:** 1 document generation, all document types, HTML & Markdown download
+- **Pro ($9/mo):** Coming soon — unlimited generation, PDF export, custom branding, AI-enhanced generation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Legal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+LegalKit is a template generator, not a law firm. Generated documents are templates and do not constitute legal advice. Always consult a qualified attorney before using any generated document for your business.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built by [Deep End Ventures](https://github.com/deep-end-ventures)
