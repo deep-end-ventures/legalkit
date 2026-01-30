@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { GeneratedDocument } from '@/lib/types';
-import { FileText, Download, Trash2, Plus, Copy, Check, AlertTriangle } from 'lucide-react';
+import { FileText, Download, Trash2, Plus, Copy, Check, AlertTriangle, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { DISCLAIMERS } from '@/lib/disclaimers';
+import { downloadAsPdf } from '@/lib/pdf-export';
 
 export default function DashboardPage() {
   const [documents, setDocuments] = useState<GeneratedDocument[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [pdfLoading, setPdfLoading] = useState<string | null>(null);
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem('legalkit_documents') || '[]');
@@ -25,6 +27,17 @@ export default function DashboardPage() {
     navigator.clipboard.writeText(content);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  const handlePdfDownload = async (doc: GeneratedDocument) => {
+    setPdfLoading(doc.id);
+    try {
+      await downloadAsPdf(doc);
+    } catch (err) {
+      console.error('PDF generation failed:', err);
+    } finally {
+      setPdfLoading(null);
+    }
   };
 
   const handleDownload = (doc: GeneratedDocument, format: 'md' | 'html') => {
@@ -122,17 +135,31 @@ export default function DashboardPage() {
                     {copiedId === doc.id ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
                   </button>
                   <button
+                    onClick={() => handleDownload(doc, 'html')}
+                    className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                    title="Download HTML"
+                  >
+                    <span className="text-xs font-medium">HTML</span>
+                  </button>
+                  <button
                     onClick={() => handleDownload(doc, 'md')}
                     className="p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
                     title="Download Markdown"
                   >
-                    <Download className="w-4 h-4" />
+                    <span className="text-xs font-medium">MD</span>
                   </button>
                   <button
-                    onClick={() => handleDownload(doc, 'html')}
-                    className="px-3 py-1.5 text-xs font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                    onClick={() => handlePdfDownload(doc)}
+                    disabled={pdfLoading === doc.id}
+                    className="px-3 py-1.5 text-xs font-medium bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-60 transition-colors flex items-center gap-1"
+                    title="Download PDF"
                   >
-                    HTML
+                    {pdfLoading === doc.id ? (
+                      <Loader2 className="w-3 h-3 animate-spin" />
+                    ) : (
+                      <Download className="w-3 h-3" />
+                    )}
+                    {pdfLoading === doc.id ? 'PDF...' : 'PDF'}
                   </button>
                   <button
                     onClick={() => handleDelete(doc.id)}

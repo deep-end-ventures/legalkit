@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { QuestionnaireData, DATA_TYPES, DATA_USAGE, THIRD_PARTIES, COOKIE_TYPES, JURISDICTIONS, COMPANY_TYPES, GeneratedDocument } from '@/lib/types';
 import { generateDocuments } from '@/templates';
 import { DISCLAIMERS } from '@/lib/disclaimers';
-import { ArrowLeft, ArrowRight, FileText, Download, Copy, Check, AlertTriangle, Scale } from 'lucide-react';
+import { ArrowLeft, ArrowRight, FileText, Download, Copy, Check, AlertTriangle, Scale, Loader2 } from 'lucide-react';
+import { downloadAsPdf } from '@/lib/pdf-export';
 
 type Step = 'company' | 'data' | 'jurisdiction' | 'cookies' | 'documents' | 'review' | 'results';
 
@@ -47,6 +48,7 @@ export default function GeneratePage() {
   const [results, setResults] = useState<GeneratedDocument[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [agreedToDisclaimer, setAgreedToDisclaimer] = useState(false);
+  const [pdfLoading, setPdfLoading] = useState<string | null>(null);
 
   const currentStepIndex = STEPS.findIndex(s => s.key === step);
 
@@ -76,6 +78,17 @@ export default function GeneratePage() {
     navigator.clipboard.writeText(content);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  const handlePdfDownload = async (doc: GeneratedDocument) => {
+    setPdfLoading(doc.id);
+    try {
+      await downloadAsPdf(doc);
+    } catch (err) {
+      console.error('PDF generation failed:', err);
+    } finally {
+      setPdfLoading(null);
+    }
   };
 
   const handleDownload = (doc: GeneratedDocument, format: 'md' | 'html') => {
@@ -158,18 +171,30 @@ export default function GeneratePage() {
                       {copiedId === doc.id ? 'Copied!' : 'Copy'}
                     </button>
                     <button
+                      onClick={() => handleDownload(doc, 'html')}
+                      className="flex items-center gap-1 px-3 py-1.5 text-sm border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+                    >
+                      <Download className="w-3 h-3" />
+                      HTML
+                    </button>
+                    <button
                       onClick={() => handleDownload(doc, 'md')}
                       className="flex items-center gap-1 px-3 py-1.5 text-sm border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
                     >
                       <Download className="w-3 h-3" />
-                      .md
+                      Markdown
                     </button>
                     <button
-                      onClick={() => handleDownload(doc, 'html')}
-                      className="flex items-center gap-1 px-3 py-1.5 text-sm bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+                      onClick={() => handlePdfDownload(doc)}
+                      disabled={pdfLoading === doc.id}
+                      className="flex items-center gap-1 px-4 py-1.5 text-sm bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-60 transition-colors font-medium"
                     >
-                      <Download className="w-3 h-3" />
-                      .html
+                      {pdfLoading === doc.id ? (
+                        <Loader2 className="w-3 h-3 animate-spin" />
+                      ) : (
+                        <Download className="w-3 h-3" />
+                      )}
+                      {pdfLoading === doc.id ? 'Generating...' : 'PDF'}
                     </button>
                   </div>
                 </div>
