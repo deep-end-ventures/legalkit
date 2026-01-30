@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="og-lk-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="50%" stop-color="#292556"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+    <linearGradient id="og-lk-accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#og-lk-bg)"/>
+  <!-- Subtle legal pattern (section symbols) -->
+  <g opacity="0.04" fill="#ffffff" font-family="Georgia, serif" font-size="80">
+    <text x="50" y="100">§</text><text x="200" y="200">§</text><text x="900" y="150">§</text>
+    <text x="1050" y="400">§</text><text x="100" y="500">§</text><text x="1100" y="550">§</text>
+  </g>
+  <!-- Logo -->
+  <g transform="translate(80, 130) scale(1.45)">
+    <path d="M55 30 L165 30 L195 60 L195 210 L55 210 Z" fill="url(#og-lk-accent)" rx="4"/>
+    <path d="M165 30 L165 60 L195 60 Z" fill="#312e81"/>
+    <rect x="78" y="85" width="90" height="5" rx="2.5" fill="#ffffff" opacity="0.7"/>
+    <rect x="78" y="102" width="75" height="5" rx="2.5" fill="#ffffff" opacity="0.5"/>
+    <rect x="78" y="119" width="85" height="5" rx="2.5" fill="#ffffff" opacity="0.4"/>
+    <rect x="78" y="136" width="60" height="5" rx="2.5" fill="#ffffff" opacity="0.3"/>
+    <g transform="translate(160, 155)">
+      <path d="M0 -28 L28 -14 L28 8 C28 22 16 32 0 38 C-16 32 -28 22 -28 8 L-28 -14 Z" fill="#4338ca" stroke="#ffffff" stroke-width="3"/>
+      <polyline points="-10,2 -3,10 12,-6" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <text x="78" y="72" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#ffffff" opacity="0.9">§</text>
+  </g>
+  <!-- Text -->
+  <text x="480" y="270" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="72" font-weight="700" fill="#ffffff" letter-spacing="-2">LegalKit</text>
+  <text x="480" y="330" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="24" fill="#c7d2fe" letter-spacing="1">LEGAL DOCUMENTS, SIMPLIFIED</text>
+  <!-- Feature pills -->
+  <g transform="translate(480, 370)">
+    <rect x="0" y="0" width="150" height="36" rx="18" fill="#ffffff" opacity="0.12"/>
+    <text x="75" y="24" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Doc Generator</text>
+    <rect x="165" y="0" width="130" height="36" rx="18" fill="#ffffff" opacity="0.12"/>
+    <text x="230" y="24" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Compliant</text>
+    <rect x="310" y="0" width="140" height="36" rx="18" fill="#ffffff" opacity="0.12"/>
+    <text x="380" y="24" font-family="system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">AI-Powered</text>
+  </g>
+  <!-- URL -->
+  <text x="480" y="520" font-family="monospace" font-size="18" fill="#a5b4fc" opacity="0.7">legalkit.app</text>
+</svg>
