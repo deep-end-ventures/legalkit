@@ -168,6 +168,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Free Tools */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Free Legal Document Tools</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">Generate any of these essential legal documents — completely free</p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Link
+              href="/free-privacy-policy-generator"
+              className="bg-white p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all group"
+            >
+              <Shield className="w-8 h-8 text-indigo-600 mb-4" />
+              <h3 className="font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Privacy Policy Generator</h3>
+              <p className="text-gray-600 text-sm mb-3">GDPR, CCPA, PIPEDA compliant privacy policies for any business type.</p>
+              <span className="text-sm text-indigo-600 font-medium">Generate free →</span>
+            </Link>
+            <Link
+              href="/free-terms-of-service-generator"
+              className="bg-white p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all group"
+            >
+              <Scale className="w-8 h-8 text-indigo-600 mb-4" />
+              <h3 className="font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Terms of Service Generator</h3>
+              <p className="text-gray-600 text-sm mb-3">Cover liability, IP, user accounts, payments, and dispute resolution.</p>
+              <span className="text-sm text-indigo-600 font-medium">Generate free →</span>
+            </Link>
+            <Link
+              href="/free-cookie-policy-generator"
+              className="bg-white p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-md transition-all group"
+            >
+              <Globe className="w-8 h-8 text-indigo-600 mb-4" />
+              <h3 className="font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Cookie Policy Generator</h3>
+              <p className="text-gray-600 text-sm mb-3">ePrivacy Directive compliant cookie policies with detailed breakdowns.</p>
+              <span className="text-sm text-indigo-600 font-medium">Generate free →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-indigo-600">
         <div className="max-w-3xl mx-auto px-4 text-center">
