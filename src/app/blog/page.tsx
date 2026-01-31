@@ -77,7 +77,7 @@ export default function BlogPage() {
             Ready to Generate Your Legal Documents?
           </h2>
           <p className="text-gray-600 mb-6">
-            Privacy policies, terms of service, and cookie policies — customized
+            Privacy policies, terms of service, cookie policies, refund policies &amp; disclaimers — customized
             for your business in minutes.
           </p>
           <Link

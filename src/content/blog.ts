@@ -369,6 +369,331 @@ No signup. No credit card. Professional quality.
 *LegalKit provides legal document templates, not legal advice. Documents are generated based on your inputs and should be reviewed by a qualified attorney before use in regulated industries or high-stakes situations.*
     `,
   },
+  {
+    slug: "free-refund-policy-generator",
+    title: "Free Refund Policy Generator: Build a Clear Return Policy in Minutes",
+    description:
+      "Create a professional refund policy for your business with our free generator. Covers digital goods, subscriptions, refund windows, and more — no signup required.",
+    date: "2026-01-31",
+    readTime: "7 min read",
+    category: "Guides",
+    keywords: [
+      "free refund policy generator",
+      "refund policy template",
+      "return policy generator",
+      "refund policy for online store",
+      "ecommerce refund policy",
+      "SaaS refund policy",
+    ],
+    content: `
+## Why Your Business Needs a Refund Policy
+
+A clear refund policy isn't just good customer service — it's a trust signal that directly impacts conversions. Studies consistently show that **63% of online shoppers check the return policy before making a purchase**, and businesses with transparent refund policies see higher conversion rates.
+
+Without a refund policy, you face:
+
+- **Customer disputes and chargebacks** — without clear terms, every refund becomes a negotiation
+- **Lower conversion rates** — shoppers abandon carts when they can't find return information
+- **Payment processor issues** — Stripe, PayPal, and most processors require a refund policy
+- **Legal exposure** — consumer protection laws in many jurisdictions mandate refund disclosures
+- **Negative reviews** — unclear policies breed frustration and one-star reviews
+
+## What Makes a Good Refund Policy?
+
+The best refund policies are **clear, fair, and easy to find**. Here's what to include:
+
+### 1. Refund Window
+How many days does a customer have to request a refund? Common windows:
+
+| Window | Best For |
+|---|---|
+| **7 days** | Digital products, SaaS with free trials |
+| **14 days** | EU minimum (required by law for EU customers) |
+| **30 days** | Standard for most online businesses |
+| **60-90 days** | Premium brands that want to signal confidence |
+
+### 2. Eligible Reasons
+Be specific about what qualifies for a refund:
+- Product doesn't work as described
+- Unauthorized charges
+- Technical issues preventing access
+- Items damaged in shipping (for physical goods)
+- Significant deviation from product description
+
+### 3. Non-Refundable Items
+Clearly list what's excluded:
+- Custom or personalized products
+- Fully rendered services
+- Items purchased during final-sale promotions
+- Purchases beyond the refund window
+
+### 4. Refund Method
+How will the money be returned?
+- **Original payment method** — most common and expected
+- **Store credit** — keeps the money in your ecosystem
+- **Customer's choice** — the most generous option
+
+### 5. Process and Timeline
+Explain exactly how to request a refund and how long it takes. Customers want predictability, not surprises.
+
+## Refund Policies for Digital Products and SaaS
+
+Digital goods and software subscriptions need special consideration because you can't "return" a digital product.
+
+### The Challenge
+Once someone downloads your ebook, uses your API, or accesses your course content, they've received value that can't be un-delivered. This creates a tension between being fair to customers and protecting your business from abuse.
+
+### Best Practices for Digital Refunds
+
+**Offer a no-questions-asked window.** Even for digital products, a 7-14 day refund window builds trust and rarely gets abused. Most people who request refunds have legitimate issues.
+
+**Distinguish between "before access" and "after access."** If someone buys a product but hasn't downloaded or accessed it yet, a full refund is straightforward. After access, you might offer partial refunds or case-by-case review.
+
+**For SaaS products, handle subscriptions clearly:**
+- Monthly subscribers can cancel anytime (no partial-month refunds is standard)
+- Annual subscribers should get a prorated refund within the first 30 days
+- Free trials that convert should have a grace period after conversion
+
+### What the Law Says
+
+In the **EU**, consumers have a 14-day "cooling off" period for online purchases. However, digital content can be exempt once download or streaming begins — IF the consumer explicitly consented to waive their right of withdrawal.
+
+In the **US**, federal law doesn't mandate specific refund policies, but the FTC requires that your actual practices match what you advertise. Some states (like California) require displayed refund policies for retail sales.
+
+## Common Refund Policy Mistakes
+
+### Being Too Restrictive
+"All sales are final" might sound protective, but it:
+- Tanks your conversion rate
+- Increases chargebacks (people dispute through their bank instead)
+- May violate consumer protection laws in some jurisdictions
+- Signals that you don't stand behind your product
+
+### Being Too Vague
+"Refunds may be available under certain circumstances" tells customers nothing and creates support headaches. Be specific about the when, what, and how.
+
+### Hiding the Policy
+Your refund policy should be:
+- Linked in your website footer
+- Visible before checkout
+- Referenced in order confirmation emails
+- Easy to find (not buried in your Terms of Service)
+
+### Forgetting About Chargebacks
+When customers can't get a refund through you, they go to their bank. Chargebacks cost you the sale amount PLUS $15-100 in fees. A generous refund policy is cheaper than chargebacks.
+
+## How to Generate Your Refund Policy
+
+Instead of copying a template that doesn't fit your business, generate a customized refund policy in minutes:
+
+1. **Go to [LegalKit's generator](/generate)** — no signup required
+2. **Select "Refund Policy"** from the document types
+3. **Configure your settings:**
+   - Choose your refund window (7-90 days)
+   - Select your refund method (original payment, store credit, or customer choice)
+   - Toggle digital goods and subscription options
+4. **Review and download** — ready for your website
+
+The generator customizes the language based on your business type, refund window, and whether you sell digital goods or subscriptions.
+
+## Refund Policy Generators: Free vs. Paid
+
+| Feature | LegalKit (Free) | Paid Generators ($30-200) | Lawyer ($500-2,000) |
+|---|---|---|---|
+| Digital goods handling | ✅ | ✅ | ✅ |
+| Subscription billing | ✅ | ✅ | ✅ |
+| Custom refund window | ✅ | ✅ | ✅ |
+| Multiple formats (HTML/MD/PDF) | ✅ | Varies | PDF only |
+| Jurisdiction-specific | ✅ | Varies | ✅ |
+| Custom to your business | ✅ | Basic | Fully custom |
+| Time to generate | Under 5 min | 10-15 min | 1-2 weeks |
+
+For most small businesses and startups, a generated template covers 90% of what you need. Save the lawyer fees for when you're dealing with complex multi-jurisdiction requirements.
+
+## Generate Your Refund Policy Now
+
+Stop losing customers because they can't find your refund policy — or because you don't have one.
+
+**[Generate your free refund policy →](/generate)**
+
+No signup. No credit card. Takes under 5 minutes.
+
+---
+
+*LegalKit generates legal document templates based on your inputs. These templates are starting points and are not a substitute for professional legal advice. We recommend having an attorney review any legal documents before publication.*
+    `,
+  },
+  {
+    slug: "free-disclaimer-generator",
+    title: "Free Disclaimer Generator: Protect Your Business from Liability",
+    description:
+      "Generate a professional website disclaimer for free. Cover accuracy, professional advice, external links, testimonials, and more — customized for your business.",
+    date: "2026-01-31",
+    readTime: "6 min read",
+    category: "Guides",
+    keywords: [
+      "free disclaimer generator",
+      "website disclaimer generator",
+      "disclaimer template",
+      "liability disclaimer",
+      "website disclaimer example",
+      "disclaimer for website",
+    ],
+    content: `
+## What Is a Website Disclaimer and Why Do You Need One?
+
+A disclaimer is a legal statement that limits your liability for the content on your website, products, or services. It's the difference between a visitor interpreting your blog post as professional advice (and suing you when it doesn't work out) and them understanding it's general information.
+
+**Every website that publishes content should have a disclaimer.** This includes:
+
+- Blogs and content sites
+- SaaS products and AI tools
+- Professional services websites
+- E-commerce stores
+- Educational platforms
+- Health, fitness, and wellness sites
+- Financial information sites
+
+Without a disclaimer, you're leaving yourself exposed to claims that your content was misleading, inaccurate, or constituted professional advice.
+
+## Types of Disclaimers You Might Need
+
+### 1. General Disclaimer (No Guarantees of Accuracy)
+
+The foundational disclaimer. States that while you try to be accurate, you don't guarantee the completeness, accuracy, or timeliness of your content.
+
+**Best for:** All websites that publish any kind of information.
+
+**Example language:** "The information provided on this website is for general informational purposes only. While we strive to keep the information current and accurate, we make no representations or warranties of any kind about the completeness, accuracy, reliability, or suitability of the information."
+
+### 2. "Not Professional Advice" Disclaimer
+
+Critical for websites in regulated fields. Makes clear that your content is not a substitute for professional legal, medical, financial, or other professional advice.
+
+**Best for:** Legal tools (like LegalKit!), health blogs, finance sites, educational platforms, AI tools.
+
+**Why it matters:** If a visitor relies on your health article instead of seeing a doctor, or uses your legal template without consulting a lawyer, you could face liability without this disclaimer.
+
+### 3. External Links Disclaimer
+
+Protects you from liability for content on websites you link to. Just because you link to a resource doesn't mean you endorse or control its content.
+
+**Best for:** Any site that links to external resources, curated directories, resource pages.
+
+### 4. Testimonials Disclaimer
+
+If your website features customer testimonials, reviews, or case studies, you need to clarify that these represent individual experiences, not guaranteed outcomes.
+
+**Best for:** SaaS products, service businesses, courses, any site featuring social proof.
+
+**FTC compliance:** In the US, the FTC requires that testimonials reflect typical results, or you must clearly disclose that results may vary.
+
+### 5. Errors and Omissions Disclaimer
+
+A stronger version of the general disclaimer, specifically addressing that you're not responsible for errors, omissions, or actions taken based on your content.
+
+**Best for:** Professional services, consulting, educational content, data-heavy websites.
+
+### 6. Fair Use Notice
+
+If your site uses copyrighted material for commentary, criticism, education, or news reporting, a fair use notice explains your legal basis for doing so.
+
+**Best for:** Review sites, educational content, news commentary, critique and analysis sites.
+
+## Disclaimer vs. Terms of Service vs. Privacy Policy
+
+These three documents serve different purposes:
+
+| Document | Purpose | Protects |
+|---|---|---|
+| **Disclaimer** | Limits liability for your content | You from content-related claims |
+| **Terms of Service** | Sets rules for using your service | You from misuse and disputes |
+| **Privacy Policy** | Discloses data practices | Users' data rights |
+
+You likely need all three. The good news: [LegalKit can generate all of them](/generate) from a single questionnaire.
+
+## Where to Place Your Disclaimer
+
+### Website Footer
+Link your disclaimer in the footer of every page, alongside your privacy policy and terms of service.
+
+### Dedicated Disclaimer Page
+Create a standalone page (e.g., /disclaimer) with the full text. This is what the footer links to.
+
+### Inline Disclaimers
+Add brief, contextual disclaimers where they matter most:
+- Before AI-generated content
+- Below health or fitness information
+- Adjacent to financial data or projections
+- Near testimonials and case studies
+- Before generated legal documents (like we do at LegalKit)
+
+### Email Footers
+If you send marketing emails or newsletters, include a brief disclaimer in the email footer.
+
+## Common Disclaimer Mistakes
+
+### 1. Using a Disclaimer as a Shield for Fraud
+A disclaimer doesn't protect you from deliberately misleading claims. If you claim your supplement cures cancer and add a disclaimer saying "not medical advice," you're still liable. Disclaimers protect honest actors, not bad ones.
+
+### 2. Making It Too Long
+A 10-page disclaimer that nobody reads is less effective than a clear, concise one. Courts have questioned the enforceability of terms that are unreasonably long or complex.
+
+### 3. Not Updating It
+If your business changes — new services, new content areas, new jurisdictions — update your disclaimer. An outdated disclaimer might not cover your current activities.
+
+### 4. Hiding It
+The more visible your disclaimer, the more enforceable it is. Don't bury it three clicks deep. Link it prominently and include inline notices where relevant.
+
+### 5. Copy-Pasting from Another Site
+Someone else's disclaimer was written for their business, not yours. A disclaimer for a medical blog looks very different from one for a SaaS tool. Use a generator that customizes the language for your specific situation.
+
+## How to Generate a Free Disclaimer
+
+Creating a customized disclaimer takes about 3 minutes with LegalKit:
+
+1. **[Open LegalKit's generator](/generate)** — no signup required
+2. **Select "Disclaimer"** from the document types
+3. **Choose your sections:**
+   - No guarantees of accuracy
+   - Not professional advice (legal, medical, financial)
+   - External links disclaimer
+   - Testimonials disclaimer
+   - Errors and omissions
+   - Fair use notice
+4. **Review and download** — available in HTML, Markdown, and PDF
+
+The generator creates a disclaimer tailored to your business type and the sections you select.
+
+## Should You Use a Free Generator or Hire a Lawyer?
+
+For most businesses, a generated disclaimer template is sufficient:
+
+| Scenario | Recommendation |
+|---|---|
+| Blog or content site | Free generator ✅ |
+| SaaS or digital product | Free generator ✅ |
+| E-commerce store | Free generator ✅ |
+| AI-powered tool | Free generator ✅ |
+| Medical or healthcare provider | Lawyer recommended |
+| Financial advisory firm | Lawyer recommended |
+| Products that could cause physical harm | Lawyer essential |
+
+The pattern is simple: if your content could directly impact someone's health, finances, or physical safety in a professional capacity, invest in a lawyer. For everything else, a well-generated template does the job.
+
+## Generate Your Disclaimer Now
+
+Don't leave your business exposed. A proper disclaimer takes 3 minutes to create and provides meaningful liability protection.
+
+**[Generate your free disclaimer →](/generate)**
+
+No signup. No credit card. Customized for your business.
+
+---
+
+*LegalKit generates legal document templates based on your inputs. These templates are starting points and are not a substitute for professional legal advice. We recommend having an attorney review any legal documents before publication.*
+    `,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

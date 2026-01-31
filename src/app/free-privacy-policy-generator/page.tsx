@@ -249,6 +249,27 @@ export default function FreePrivacyPolicyGeneratorPage() {
         </div>
       </section>
 
+      {/* Other Tools */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">More Free Legal Document Generators</h2>
+          <p className="text-gray-600 text-center mb-8 max-w-xl mx-auto">Generate all the legal documents your business needs</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { name: 'Terms of Service', href: '/free-terms-of-service-generator', desc: 'Protect your business' },
+              { name: 'Cookie Policy', href: '/free-cookie-policy-generator', desc: 'ePrivacy compliant' },
+              { name: 'Refund Policy', href: '/free-refund-policy-generator', desc: 'Clear return terms' },
+              { name: 'Disclaimer', href: '/free-disclaimer-generator', desc: 'Limit your liability' },
+            ].map((tool) => (
+              <Link key={tool.name} href={tool.href} className="p-4 rounded-xl border border-gray-200 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                <h3 className="font-semibold text-gray-900 mb-1">{tool.name}</h3>
+                <p className="text-xs text-gray-500">{tool.desc}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-indigo-600">
         <div className="max-w-3xl mx-auto px-4 text-center">

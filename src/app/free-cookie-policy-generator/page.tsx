@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { FileText, Download, Zap, ArrowRight, HelpCircle, Shield, Scale } from 'lucide-react';
+import { FileText, Download, Zap, ArrowRight, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Free Cookie Policy Generator — Create Your Cookie Policy in Minutes | LegalKit',
@@ -249,31 +249,23 @@ export default function FreeCookiePolicyGeneratorPage() {
         </div>
       </section>
 
-      {/* Related Tools */}
-      <section className="py-16 bg-white">
+      {/* Other Tools */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Complete Your Legal Document Suite</h2>
-          <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <Link
-              href="/free-privacy-policy-generator"
-              className="flex items-center gap-3 p-5 rounded-xl border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-colors"
-            >
-              <Shield className="w-6 h-6 text-indigo-600" />
-              <div>
-                <span className="font-semibold text-gray-900">Privacy Policy Generator</span>
-                <p className="text-xs text-gray-500">GDPR & CCPA compliant</p>
-              </div>
-            </Link>
-            <Link
-              href="/free-terms-of-service-generator"
-              className="flex items-center gap-3 p-5 rounded-xl border border-gray-200 hover:border-indigo-300 hover:bg-indigo-50/50 transition-colors"
-            >
-              <Scale className="w-6 h-6 text-indigo-600" />
-              <div>
-                <span className="font-semibold text-gray-900">Terms of Service Generator</span>
-                <p className="text-xs text-gray-500">Liability & IP protection</p>
-              </div>
-            </Link>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">More Free Legal Document Generators</h2>
+          <p className="text-gray-600 text-center mb-8 max-w-xl mx-auto">Generate all the legal documents your business needs</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { name: 'Privacy Policy', href: '/free-privacy-policy-generator', desc: 'GDPR & CCPA compliant' },
+              { name: 'Terms of Service', href: '/free-terms-of-service-generator', desc: 'Protect your business' },
+              { name: 'Refund Policy', href: '/free-refund-policy-generator', desc: 'Clear return terms' },
+              { name: 'Disclaimer', href: '/free-disclaimer-generator', desc: 'Limit your liability' },
+            ].map((tool) => (
+              <Link key={tool.name} href={tool.href} className="p-4 rounded-xl border border-gray-200 bg-white hover:border-indigo-300 hover:shadow-sm transition-all">
+                <h3 className="font-semibold text-gray-900 mb-1">{tool.name}</h3>
+                <p className="text-xs text-gray-500">{tool.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

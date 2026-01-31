@@ -124,7 +124,7 @@ export default async function BlogPostPage({
             Generate Your Legal Documents for Free
           </h2>
           <p className="text-gray-600 mb-6">
-            Privacy policies, terms of service, and cookie policies — customized
+            Privacy policies, terms of service, cookie policies, refund policies &amp; disclaimers — customized
             for your business in under 5 minutes.
           </p>
           <Link

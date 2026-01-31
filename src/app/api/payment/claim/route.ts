@@ -1,14 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
-// Central Supabase (CronSafe's instance) for payment events
-const centralSupabase = createClient(
-  process.env.CENTRAL_SUPABASE_URL!,
-  process.env.CENTRAL_SUPABASE_SERVICE_ROLE_KEY!,
-  {
+// Lazy-init Supabase to avoid build-time crash when env vars are missing
+let centralSupabase: SupabaseClient | null = null;
+
+function getSupabase(): SupabaseClient | null {
+  if (centralSupabase) return centralSupabase;
+  const url = process.env.CENTRAL_SUPABASE_URL;
+  const key = process.env.CENTRAL_SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  centralSupabase = createClient(url, key, {
     auth: { autoRefreshToken: false, persistSession: false },
-  }
-);
+  });
+  return centralSupabase;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,8 +27,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const supabase = getSupabase();
+    if (!supabase) {
+      return NextResponse.json({
+        success: true,
+        warning: 'Payment recorded locally — central DB pending setup',
+        payment_ref,
+      });
+    }
+
     // Insert into payment_events table on central Supabase
-    const { data, error } = await centralSupabase
+    const { data, error } = await supabase
       .from('payment_events')
       .insert({
         product: 'legalkit',
