@@ -44,7 +44,7 @@ export function Footer() {
             <p className="text-xs text-gray-500">
               © {new Date().getFullYear()} LegalKit. A{' '}
               <a
-                href="https://deep-end-ventures.vercel.app"
+                href="https://deep-end-ventures-site-amber.vercel.app"
                 className="text-gray-400 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
