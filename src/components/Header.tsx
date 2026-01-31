@@ -43,6 +43,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-6">
           <Link href="/#features" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Features</Link>
           <Link href="/#pricing" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Pricing</Link>
+          <Link href="/blog" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Blog</Link>
           <Link href="/dashboard" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Dashboard</Link>
           <Link href="/generate" className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
             Generate Documents
@@ -61,6 +62,7 @@ export function Header() {
           <div className="px-4 py-4 space-y-3">
             <Link href="/#features" className="block text-gray-600 hover:text-gray-900 text-sm font-medium" onClick={() => setMobileOpen(false)}>Features</Link>
             <Link href="/#pricing" className="block text-gray-600 hover:text-gray-900 text-sm font-medium" onClick={() => setMobileOpen(false)}>Pricing</Link>
+            <Link href="/blog" className="block text-gray-600 hover:text-gray-900 text-sm font-medium" onClick={() => setMobileOpen(false)}>Blog</Link>
             <Link href="/dashboard" className="block text-gray-600 hover:text-gray-900 text-sm font-medium" onClick={() => setMobileOpen(false)}>Dashboard</Link>
             <Link href="/generate" className="block bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium text-center" onClick={() => setMobileOpen(false)}>
               Generate Documents
