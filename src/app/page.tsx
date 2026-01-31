@@ -116,7 +116,7 @@ export default function HomePage() {
               </div>
               <ul className="space-y-3 mb-8">
                 {[
-                  '1 document generation',
+                  '3 documents per month',
                   'All document types',
                   'Download as Markdown & HTML',
                   'Standard templates',
@@ -136,22 +136,22 @@ export default function HomePage() {
             {/* Pro */}
             <div className="bg-indigo-600 rounded-2xl p-8 border border-indigo-500 text-white relative overflow-hidden">
               <div className="absolute top-4 right-4 bg-amber-400 text-amber-900 text-xs font-bold px-3 py-1 rounded-full">
-                COMING SOON
+                RECOMMENDED
               </div>
               <h3 className="text-xl font-bold mb-2">Pro</h3>
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-4xl font-bold">$9</span>
+                <span className="text-4xl font-bold">$12</span>
                 <span className="text-indigo-200">/month</span>
               </div>
               <ul className="space-y-3 mb-8">
                 {[
-                  'Unlimited document generation',
+                  'Unlimited documents',
                   'All document types',
                   'Download as Markdown, HTML & PDF',
                   'Custom branding (no watermark)',
+                  'Bulk export',
+                  'Priority templates',
                   'Document dashboard & versioning',
-                  'Priority support',
-                  'AI-enhanced generation',
                 ].map(f => (
                   <li key={f} className="flex items-center gap-2 text-indigo-100 text-sm">
                     <Check className="w-4 h-4 text-indigo-300 flex-shrink-0" />
@@ -159,9 +159,10 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <button disabled className="block w-full text-center bg-white/20 text-white py-3 rounded-lg font-medium cursor-not-allowed">
-                Coming Soon
-              </button>
+              <Link href="/pricing" className="block w-full text-center bg-white text-indigo-600 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                Upgrade to Pro — $12/mo
+              </Link>
+              <p className="mt-2 text-center text-xs text-indigo-300">Pay with USDC on Base</p>
             </div>
           </div>
         </div>

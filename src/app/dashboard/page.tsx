@@ -6,6 +6,8 @@ import { FileText, Download, Trash2, Plus, Copy, Check, AlertTriangle, Loader2 }
 import Link from 'next/link';
 import { DISCLAIMERS } from '@/lib/disclaimers';
 import { downloadAsPdf } from '@/lib/pdf-export';
+import { ProBadge } from '@/components/ProBadge';
+import { isPro } from '@/lib/subscription';
 
 export default function DashboardPage() {
   const [documents, setDocuments] = useState<GeneratedDocument[]>([]);
@@ -74,8 +76,16 @@ export default function DashboardPage() {
     <div className="max-w-5xl mx-auto px-4 py-12">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Your Documents</h1>
-          <p className="text-gray-600 mt-1">Manage and download your generated legal documents</p>
+          <div className="flex items-center gap-3">
+            <h1 className="text-3xl font-bold text-gray-900">Your Documents</h1>
+            <ProBadge />
+          </div>
+          <p className="text-gray-600 mt-1">
+            Manage and download your generated legal documents
+            {!isPro() && (
+              <> · <Link href="/pricing" className="text-indigo-600 hover:text-indigo-700 font-medium">Upgrade to Pro for unlimited</Link></>
+            )}
+          </p>
         </div>
         <Link
           href="/generate"
