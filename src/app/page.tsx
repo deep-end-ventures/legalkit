@@ -235,6 +235,68 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">Frequently Asked Questions</h2>
+          <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">Everything you need to know about generating legal documents</p>
+          <div className="space-y-6">
+            {[
+              {
+                q: "Is LegalKit really free?",
+                a: "Yes! Generate up to 3 documents per month for free across all 5 document types — Privacy Policy, Terms of Service, Cookie Policy, Refund Policy, and Disclaimer. No signup required for your first document. Upgrade to Pro ($12/mo) for unlimited documents and PDF export.",
+              },
+              {
+                q: "Are LegalKit documents legally valid?",
+                a: "LegalKit generates professional documents based on established legal templates covering GDPR, CCPA/CPRA, PIPEDA, LGPD, and other major regulations. While our documents are comprehensive and production-ready, we recommend having an attorney review them for your specific jurisdiction and business needs.",
+              },
+              {
+                q: "What jurisdictions does LegalKit support?",
+                a: "LegalKit supports multi-jurisdiction compliance including GDPR (EU), CCPA/CPRA (California), PIPEDA (Canada), LGPD (Brazil), and general US/UK/AU frameworks. Select your applicable jurisdictions during the questionnaire and we'll include the relevant clauses.",
+              },
+              {
+                q: "How is LegalKit different from Termly or GetTerms?",
+                a: "LegalKit is completely free for up to 3 documents per month with no watermark restrictions on free Markdown/HTML exports. We support 5 document types (Privacy Policy, Terms of Service, Cookie Policy, Refund Policy, and Disclaimer) with multi-jurisdiction support — all without requiring a signup or credit card.",
+              },
+              {
+                q: "Can I customize the generated documents?",
+                a: "Absolutely. The guided questionnaire lets you customize every section: your business details, data practices, cookie usage, refund windows, and applicable jurisdictions. Download in Markdown or HTML and make further edits as needed.",
+              },
+              {
+                q: "Do I need a privacy policy for my website?",
+                a: "Yes — if your website collects any personal data (including through cookies, analytics, or contact forms), privacy regulations like GDPR and CCPA require a privacy policy. Most app stores and ad networks also require one. LegalKit makes it easy to generate a compliant policy in minutes.",
+              },
+            ].map((faq) => (
+              <div key={faq.q} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
+                <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  { q: "Is LegalKit really free?", a: "Yes! Generate up to 3 documents per month for free across all 5 document types — Privacy Policy, Terms of Service, Cookie Policy, Refund Policy, and Disclaimer. No signup required for your first document. Upgrade to Pro ($12/mo) for unlimited documents and PDF export." },
+                  { q: "Are LegalKit documents legally valid?", a: "LegalKit generates professional documents based on established legal templates covering GDPR, CCPA/CPRA, PIPEDA, LGPD, and other major regulations. While our documents are comprehensive and production-ready, we recommend having an attorney review them for your specific jurisdiction and business needs." },
+                  { q: "What jurisdictions does LegalKit support?", a: "LegalKit supports multi-jurisdiction compliance including GDPR (EU), CCPA/CPRA (California), PIPEDA (Canada), LGPD (Brazil), and general US/UK/AU frameworks. Select your applicable jurisdictions during the questionnaire and we'll include the relevant clauses." },
+                  { q: "How is LegalKit different from Termly or GetTerms?", a: "LegalKit is completely free for up to 3 documents per month with no watermark restrictions on free Markdown/HTML exports. We support 5 document types with multi-jurisdiction support — all without requiring a signup or credit card." },
+                  { q: "Can I customize the generated documents?", a: "Absolutely. The guided questionnaire lets you customize every section: your business details, data practices, cookie usage, refund windows, and applicable jurisdictions. Download in Markdown or HTML and make further edits as needed." },
+                  { q: "Do I need a privacy policy for my website?", a: "Yes — if your website collects any personal data (including through cookies, analytics, or contact forms), privacy regulations like GDPR and CCPA require a privacy policy. Most app stores and ad networks also require one. LegalKit makes it easy to generate a compliant policy in minutes." },
+                ].map((faq) => ({
+                  "@type": "Question",
+                  name: faq.q,
+                  acceptedAnswer: { "@type": "Answer", text: faq.a },
+                })),
+              }),
+            }}
+          />
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-indigo-600">
         <div className="max-w-3xl mx-auto px-4 text-center">
