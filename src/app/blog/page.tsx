@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { blogPosts } from "@/content/blog";
 import { FileText, ArrowRight, Clock } from "lucide-react";
+import EmailCapture from "@/components/EmailCapture";
 
 export const metadata: Metadata = {
   title: "Blog — LegalKit | Guides on Privacy Policies, Terms of Service & Compliance",
@@ -67,6 +68,17 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Email Capture */}
+      <section className="py-12 bg-white">
+        <div className="max-w-2xl mx-auto px-4">
+          <EmailCapture
+            source="blog"
+            heading="Get Legal Compliance Updates"
+            subtext="New guides, regulatory changes, and template updates — straight to your inbox."
+          />
         </div>
       </section>
 

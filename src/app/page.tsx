@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Scale, FileText, Download, Shield, Zap, Globe, Check, RotateCcw, AlertTriangle } from 'lucide-react';
+import EmailCapture from '@/components/EmailCapture';
 
 export default function HomePage() {
   return (
@@ -220,6 +221,17 @@ export default function HomePage() {
               <span className="text-sm text-amber-600 font-medium">Generate free →</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Email Capture */}
+      <section className="py-16 bg-white">
+        <div className="max-w-2xl mx-auto px-4">
+          <EmailCapture
+            source="homepage"
+            heading="Stay Ahead of Compliance Changes"
+            subtext="New regulations, updated templates, and compliance tips — delivered to your inbox. No spam, ever."
+          />
         </div>
       </section>
 

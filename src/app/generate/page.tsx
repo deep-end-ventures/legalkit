@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { QuestionnaireData, DATA_TYPES, DATA_USAGE, THIRD_PARTIES, COOKIE_TYPES, JURISDICTIONS, COMPANY_TYPES, GeneratedDocument } from '@/lib/types';
 import { generateDocuments } from '@/templates';
+import EmailCapture from '@/components/EmailCapture';
 import { DISCLAIMERS } from '@/lib/disclaimers';
 import { ArrowLeft, ArrowRight, FileText, Download, Copy, Check, AlertTriangle, Scale, Loader2 } from 'lucide-react';
 import { downloadAsPdf } from '@/lib/pdf-export';
@@ -209,6 +210,15 @@ export default function GeneratePage() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Email Capture after document generation */}
+        <div className="mt-10">
+          <EmailCapture
+            source="post-generate"
+            heading="Laws Change. Stay Updated."
+            subtext="Get notified when GDPR, CCPA, or other regulations change so you can update your documents."
+          />
         </div>
 
         <div className="mt-8 text-center">

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost, getAllSlugs } from "@/content/blog";
 import { BlogPostJsonLd } from "@/components/JsonLd";
 import { ArrowLeft, Clock, Tag } from "lucide-react";
+import EmailCapture from "@/components/EmailCapture";
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
@@ -116,6 +117,17 @@ export default async function BlogPostPage({
           </div>
         </div>
       </article>
+
+      {/* Email Capture */}
+      <section className="py-12 bg-white">
+        <div className="max-w-2xl mx-auto px-4">
+          <EmailCapture
+            source={`blog-${slug}`}
+            heading="Never Miss a Compliance Update"
+            subtext="Get notified when regulations change and new document templates drop."
+          />
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-16 bg-indigo-50">
