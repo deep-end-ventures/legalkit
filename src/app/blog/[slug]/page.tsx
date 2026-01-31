@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost, getAllSlugs } from "@/content/blog";
+import { BlogPostJsonLd } from "@/components/JsonLd";
 import { ArrowLeft, Clock, Tag } from "lucide-react";
 
 export function generateStaticParams() {
@@ -47,6 +48,12 @@ export default async function BlogPostPage({
 
   return (
     <div className="bg-white">
+      <BlogPostJsonLd
+        title={post.title}
+        description={post.description}
+        date={post.date}
+        slug={slug}
+      />
       {/* Back link */}
       <div className="max-w-3xl mx-auto px-4 pt-8">
         <Link
