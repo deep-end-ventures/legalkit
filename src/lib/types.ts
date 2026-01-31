@@ -23,7 +23,7 @@ export interface QuestionnaireData {
   cookieTypes: string[];
   
   // Document Selection
-  documents: ('privacy_policy' | 'terms_of_service' | 'cookie_policy')[];
+  documents: ('privacy_policy' | 'terms_of_service' | 'cookie_policy' | 'refund_policy' | 'disclaimer')[];
   
   // Additional
   hasUserAccounts: boolean;
@@ -31,11 +31,20 @@ export interface QuestionnaireData {
   hasUserContent: boolean;
   hasSubscription: boolean;
   effectiveDate: string;
+  
+  // Refund Policy
+  refundWindow: number; // days
+  refundMethod: 'original_payment' | 'store_credit' | 'both';
+  digitalGoods: boolean;
+  subscriptionRefunds: boolean;
+  
+  // Disclaimer
+  disclaimerTypes: string[];
 }
 
 export interface GeneratedDocument {
   id: string;
-  type: 'privacy_policy' | 'terms_of_service' | 'cookie_policy';
+  type: 'privacy_policy' | 'terms_of_service' | 'cookie_policy' | 'refund_policy' | 'disclaimer';
   title: string;
   content: string;
   markdownContent: string;

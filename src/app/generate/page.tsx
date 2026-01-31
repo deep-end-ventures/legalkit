@@ -40,6 +40,11 @@ const DEFAULT_DATA: QuestionnaireData = {
   hasUserContent: false,
   hasSubscription: false,
   effectiveDate: new Date().toISOString().split('T')[0],
+  refundWindow: 30,
+  refundMethod: 'original_payment',
+  digitalGoods: false,
+  subscriptionRefunds: false,
+  disclaimerTypes: ['general', 'no_guarantees'],
 };
 
 export default function GeneratePage() {
@@ -475,6 +480,8 @@ export default function GeneratePage() {
               { value: 'privacy_policy' as const, label: 'Privacy Policy', desc: 'Required by law in most jurisdictions. Explains how you collect, use, and protect user data.' },
               { value: 'terms_of_service' as const, label: 'Terms of Service', desc: 'Defines the rules and regulations for using your service. Limits your liability.' },
               { value: 'cookie_policy' as const, label: 'Cookie Policy', desc: 'Required by GDPR/ePrivacy. Explains your use of cookies and tracking technologies.' },
+              { value: 'refund_policy' as const, label: 'Refund Policy', desc: 'Sets clear expectations for returns and refunds. Essential for e-commerce, SaaS, and subscription businesses.' },
+              { value: 'disclaimer' as const, label: 'Disclaimer', desc: 'Limits your liability and sets expectations. Covers external links, testimonials, and accuracy of information.' },
             ].map(doc => (
               <label key={doc.value} className={`flex items-start gap-3 p-4 rounded-xl border transition-colors cursor-pointer ${
                 data.documents.includes(doc.value) ? 'border-indigo-300 bg-indigo-50' : 'border-gray-200 hover:border-gray-300'
@@ -491,6 +498,91 @@ export default function GeneratePage() {
                 </div>
               </label>
             ))}
+
+            {/* Refund Policy Options */}
+            {data.documents.includes('refund_policy') && (
+              <div className="mt-6 p-4 rounded-xl border border-indigo-200 bg-indigo-50/50 space-y-4">
+                <h4 className="font-medium text-gray-900 text-sm">Refund Policy Settings</h4>
+                <div>
+                  <label className="block text-sm text-gray-600 mb-1">Refund window (days)</label>
+                  <select
+                    value={data.refundWindow}
+                    onChange={e => updateData({ refundWindow: Number(e.target.value) })}
+                    className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+                  >
+                    <option value={7}>7 days</option>
+                    <option value={14}>14 days</option>
+                    <option value={30}>30 days</option>
+                    <option value={60}>60 days</option>
+                    <option value={90}>90 days</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-600 mb-1">Refund method</label>
+                  <select
+                    value={data.refundMethod}
+                    onChange={e => updateData({ refundMethod: e.target.value as 'original_payment' | 'store_credit' | 'both' })}
+                    className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm"
+                  >
+                    <option value="original_payment">Original payment method</option>
+                    <option value="store_credit">Store credit only</option>
+                    <option value="both">Both (customer&apos;s choice)</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={data.digitalGoods}
+                      onChange={e => updateData({ digitalGoods: e.target.checked })}
+                      className="rounded text-indigo-600"
+                    />
+                    We sell digital goods / downloads
+                  </label>
+                  <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={data.subscriptionRefunds}
+                      onChange={e => updateData({ subscriptionRefunds: e.target.checked })}
+                      className="rounded text-indigo-600"
+                    />
+                    We offer subscriptions
+                  </label>
+                </div>
+              </div>
+            )}
+
+            {/* Disclaimer Options */}
+            {data.documents.includes('disclaimer') && (
+              <div className="mt-6 p-4 rounded-xl border border-indigo-200 bg-indigo-50/50 space-y-3">
+                <h4 className="font-medium text-gray-900 text-sm">Disclaimer Sections</h4>
+                <p className="text-xs text-gray-500">Select which sections to include:</p>
+                {[
+                  { value: 'no_guarantees', label: 'No Guarantees' },
+                  { value: 'professional_advice', label: 'No Professional Advice' },
+                  { value: 'external_links', label: 'External Links' },
+                  { value: 'testimonials', label: 'Testimonials' },
+                  { value: 'errors_omissions', label: 'Errors & Omissions' },
+                  { value: 'fair_use', label: 'Fair Use (Copyright)' },
+                ].map(opt => (
+                  <label key={opt.value} className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={(data.disclaimerTypes || []).includes(opt.value)}
+                      onChange={() => {
+                        const current = data.disclaimerTypes || [];
+                        const updated = current.includes(opt.value)
+                          ? current.filter(v => v !== opt.value)
+                          : [...current, opt.value];
+                        updateData({ disclaimerTypes: updated });
+                      }}
+                      className="rounded text-indigo-600"
+                    />
+                    {opt.label}
+                  </label>
+                ))}
+              </div>
+            )}
           </div>
         )}
 

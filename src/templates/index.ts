@@ -2,6 +2,8 @@ import { QuestionnaireData, GeneratedDocument } from '@/lib/types';
 import { generatePrivacyPolicy } from './privacy-policy';
 import { generateTermsOfService } from './terms-of-service';
 import { generateCookiePolicy } from './cookie-policy';
+import { generateRefundPolicy } from './refund-policy';
+import { generateDisclaimer } from './disclaimer';
 
 export function generateDocuments(data: QuestionnaireData): GeneratedDocument[] {
   const documents: GeneratedDocument[] = [];
@@ -41,6 +43,34 @@ export function generateDocuments(data: QuestionnaireData): GeneratedDocument[] 
       id: `cp-${Date.now()}`,
       type: 'cookie_policy',
       title: `Cookie Policy — ${data.companyName}`,
+      content: markdown,
+      markdownContent: markdown,
+      htmlContent: markdownToHtml(markdown, data.companyName),
+      createdAt: now,
+      companyName: data.companyName,
+    });
+  }
+
+  if (data.documents.includes('refund_policy')) {
+    const markdown = generateRefundPolicy(data);
+    documents.push({
+      id: `rp-${Date.now()}`,
+      type: 'refund_policy',
+      title: `Refund Policy — ${data.companyName}`,
+      content: markdown,
+      markdownContent: markdown,
+      htmlContent: markdownToHtml(markdown, data.companyName),
+      createdAt: now,
+      companyName: data.companyName,
+    });
+  }
+
+  if (data.documents.includes('disclaimer')) {
+    const markdown = generateDisclaimer(data);
+    documents.push({
+      id: `disc-${Date.now()}`,
+      type: 'disclaimer',
+      title: `Disclaimer — ${data.companyName}`,
       content: markdown,
       markdownContent: markdown,
       htmlContent: markdownToHtml(markdown, data.companyName),
