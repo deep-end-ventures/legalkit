@@ -11,7 +11,7 @@ import { DisclaimerBanner } from "@/components/DisclaimerBanner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://legalkit.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://legalkit.deependventures.com"),
   title: "LegalKit — AI-Powered Legal Document Generator",
   description: "Generate professional privacy policies, terms of service, and cookie policies for your business in minutes. Free tier available. LegalKit is a template generator, not a law firm.",
   keywords: ["privacy policy generator", "terms of service generator", "cookie policy", "legal documents", "GDPR", "CCPA"],

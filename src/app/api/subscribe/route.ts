@@ -73,7 +73,7 @@ export async function POST(req: NextRequest) {
             In the meantime, you can generate any of our free legal documents:
           </p>
           <div style="margin: 24px 0;">
-            <a href="https://legalkit.vercel.app/generate" style="display: inline-block; background: #4f46e5; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Generate a Document →</a>
+            <a href="https://legalkit.deependventures.com/generate" style="display: inline-block; background: #4f46e5; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">Generate a Document →</a>
           </div>
           <p style="color: #9ca3af; font-size: 13px; margin-top: 32px;">
             LegalKit is a product of <a href="https://deependventures.com" style="color: #6366f1;">Deep End Ventures</a>.
