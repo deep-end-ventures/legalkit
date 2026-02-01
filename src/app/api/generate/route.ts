@@ -1,9 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateDocuments } from '@/templates';
 import { QuestionnaireData } from '@/lib/types';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 requests per IP per hour
+    const ip = getClientIp(request);
+    const rl = rateLimit(`generate:${ip}`, { limit: 5, windowSeconds: 3600 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Rate limit exceeded. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.reset - Date.now()) / 1000)) } }
+      );
+    }
+
     const data: QuestionnaireData = await request.json();
     
     // Validate required fields

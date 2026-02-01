@@ -5,6 +5,16 @@ import { generateCookiePolicy } from './cookie-policy';
 import { generateRefundPolicy } from './refund-policy';
 import { generateDisclaimer } from './disclaimer';
 
+/** HTML-escape user-supplied values to prevent XSS in generated documents */
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export function generateDocuments(data: QuestionnaireData): GeneratedDocument[] {
   const documents: GeneratedDocument[] = [];
   const now = new Date().toISOString();
@@ -83,6 +93,8 @@ export function generateDocuments(data: QuestionnaireData): GeneratedDocument[] 
 }
 
 function markdownToHtml(markdown: string, companyName: string): string {
+  // Escape company name to prevent XSS injection in the HTML document
+  const safeCompanyName = escapeHtml(companyName);
   const html = markdown
     // Headers
     .replace(/^### (.*$)/gm, '<h3>$1</h3>')
@@ -116,7 +128,7 @@ function markdownToHtml(markdown: string, companyName: string): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${companyName} - Legal Document</title>
+  <title>${safeCompanyName} - Legal Document</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

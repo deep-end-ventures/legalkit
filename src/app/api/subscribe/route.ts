@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 // Audience ID will be created on first request if needed
 const AUDIENCE_NAME = 'LegalKit Subscribers';
@@ -24,6 +25,16 @@ async function getOrCreateAudience(resend: Resend): Promise<string> {
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit: 5 requests per IP per minute
+    const ip = getClientIp(req);
+    const rl = rateLimit(`subscribe:${ip}`, { limit: 5, windowSeconds: 60 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.reset - Date.now()) / 1000)) } }
+      );
+    }
+
     const { email, source } = await req.json();
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
